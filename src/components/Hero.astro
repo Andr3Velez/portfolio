@@ -4,22 +4,21 @@ import ButtonAva from "./ButtonAva.astro";
 import perfilImg from "../assets/perfil.png";
 
 ---
-<main>
-    <section class="w-full h-full grid place-content-center py-8 sm:py-4 ">
-        <article class="max-w-xl h-auto flex justify-start items-center gap-x-4">
+<section class="w-full h-full grid place-content-center py-16 sm:py-4 ">
+        <article class="max-w-xl h-auto flex justify-start items-center gap-x-4 mt-16 sm:mt-4 md:mt-8">
             <div class="w-18 h-18 rounded-full">
                 <img src={perfilImg.src} alt="profile-photo" class="w-full h-full rounded-full object-cover">
             </div>
             <ButtonAva href="https://linkedin.com/in/tuusuario"
             text="Disponible para trabajar"/>
         </article>
-        <article class="max-w-xl h-auto flex flex-col justify-start items-center gap-x-4 mt-2">
+        <article class="max-w-xl h-auto flex flex-col justify-start items-center gap-4 mt-4">
             <div class="w-full">
-
                 <h1 class="inline text-4xl font-bold text-left">Hola!, soy André</h1>
             </div>
-            <p>I'm a junior Front-End developer with Expertise in HTML, CSS, JavaScript, React, Tailwindcss, Git, Basic TypeScript, Firebase Services and I'm currently learnig some Back-end skills such as: Node, Express, Postgress, MongoDB </p>
+            <p class="text-xl font-semibold">I'm a junior Front-End developer with Expertise in <span class="text-[#DE4C26] font-bold">HTML</span>, <span class="text-[#2D53E5] font-bold">CSS</span>, <span class="text-[#f7e025] font-bold">JavaScript</span>, <span class="text-[#66DBFB] font-bold">React</span>, <span class="text-[#1DC0CD] font-bold">Tailwind</span>, <span class="text-[#F05639] font-bold">Git</span>, <span class="text-[#377CC8] font-bold">Basic TypeScript</span>,<span class="bg-gradient-to-r from-[#FFC400] via-[#FF9100] to-[#DD2C00] bg-clip-text text-transparent font-bold"> Firebase Services</span> and I'm currently learnig some Back-end skills such as: Node, Express, Postgress, MongoDB. </p>
         </article>
-        <article></article>
-    </section>
-</main>
+        <article class="max-w-xl h-auto mt-8">
+            <a href="#" class="w-30 flex justify-around p-2 border rounded-2xl hover:scale-110 transition-transform duration-300 ease-in-out shadow-2xl"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" /></svg><span class="font-semibold">LinkedIn</span></a>
+        </article>
+</section>
