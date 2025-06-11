@@ -1,11 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import ProjectCard from "../components/ProjectCard.astro"
+
 import posImg from "../assets/pos-photo.png"
+
+const projectDesciption = `All of the pages and components are first designed in Figma and we
+keep a parity between the two versions even as we update the project.`
 ---
 
 <section class="w-full h-auto grid place-content-center py-16 sm:py-4">
   <article
-    class="min-w-xl h-8 flex justify-start items-center gap-x-4 mt-16 sm:mt-4 md:mt-8"
+    class="max-w-xl h-8 flex justify-start items-center gap-x-4 mt-16 sm:mt-4 md:mt-8"
   >
     <div class="w-auto h-8">
       <svg
@@ -28,25 +32,43 @@ import posImg from "../assets/pos-photo.png"
     <h2 class="text-2xl font-semibold">Projects</h2>
   </article>
 
-  <article
-    class="min-w-xl h-auto flex justify-start items-center gap-x-4 mt-6 sm:mt-4 md:mt-6"
+  <article class="max-w-xl h-auto flex flex-col items-center">
+    <ProjectCard
+      projectImg={posImg.src}
+      projectTitle="POS - Point of Sale"
+      projectDesc={projectDesciption}
+    />
+    <ProjectCard
+      projectImg={posImg.src}
+      projectTitle="POS - Point of Sale"
+      projectDesc={projectDesciption}
+    />
+    <ProjectCard
+      projectImg={posImg.src}
+      projectTitle="POS - Point of Sale"
+      projectDesc={projectDesciption}
+    />
+  </article>
+</section>
+
+<!-- <article
+    class="max-w-xl h-auto flex justify-start items-center gap-x-4 mt-6 sm:mt-4 md:mt-6"
   >
     <div class="w-full h-auto flex">
       <div
-        class="w-80 h-auto rounded-3xl border border-gray-500 p-1 overflow-hidden"
+        class="max-w-72 h-auto rounded-3xl border border-gray-500 p-1 overflow-hidden"
       >
         <img src={posImg.src} alt="pos-screenshot" class="object-cover" />
       </div>
-      <div class="flex-grow px-2">
-        <span class="text-xl font-bold text-center"> POS - Point of Sale </span>
-        <div></div>
-        <p>
-          All of the pages and components <br /> are first designed in Figma <br
-          /> and we keep a parity between <br /> the two versions <br /> even as
-          we update the project.
-        </p>
-        <div></div>
+      <div class="w-full flex flex-col justify-around px-2">
+        <h3 class="text-xl font-bold text-left block">POS - Point of Sale</h3>
+        <div class="flex gap-x-1">
+          <ReactIcon />
+          <TailwindIcon />
+          <FirebaseIcon />
+          <ViteIcon />
+        </div>
+        <p class="text-md font-medium break-words"></p>
       </div>
     </div>
-  </article>
-</section>
+  </article> -->
