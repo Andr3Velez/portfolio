@@ -3,6 +3,8 @@ import ProjectCard from "../components/ProjectCard.astro"
 
 import posImg from "../assets/pos-photo.png"
 
+import SaasIcon from "../icons/SaasIcon.astro"
+
 const projectDesciption = `All of the pages and components are first designed in Figma and we
 keep a parity between the two versions even as we update the project.`
 ---
@@ -12,24 +14,10 @@ keep a parity between the two versions even as we update the project.`
     class="max-w-xl h-8 flex justify-start items-center gap-x-4 mt-16 sm:mt-4 md:mt-8"
   >
     <div class="w-auto h-8">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="w-full"
-        height="h-full"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="icon icon-tabler icons-tabler-outline icon-tabler-code"
-        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-          d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
-          d="M14 4l-4 16"></path></svg
-      >
+      <SaasIcon />
     </div>
 
-    <h2 class="text-2xl font-semibold">Projects</h2>
+    <h2 class="text-2xl font-semibold">Products</h2>
   </article>
 
   <article class="max-w-xl h-auto flex flex-col items-center">
