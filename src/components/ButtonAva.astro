@@ -1,36 +1,39 @@
 ---
 // src/components/AvailableToWorkButton.astro
 export interface Props {
-    href: string;
-    text?: string;
-    target?: string;
-    rel?: string;
+  href: string
+  text?: string
+  target?: string
+  rel?: string
 }
 
-const { 
-    href, 
-    text = "Disponible para trabajar",
-    target = "_blank", 
-    rel = "noopener" 
-} = Astro.props;
+const {
+  href,
+  text = "Disponible para trabajar",
+  target = "_blank",
+  rel = "noopener"
+} = Astro.props
 ---
 
-<a 
-    href={href} 
-    target={target} 
-    rel={rel}
-    class="flex items-center transition md:justify-center md:hover:scale-105"
+<a
+  href={href}
+  target={target}
+  rel={rel}
+  class="flex items-center transition md:justify-center md:hover:scale-105"
 >
-    <div class="flex items-center">
-        <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
-            
-            <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
-            
-            <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm rounded-full cursor-pointer backdrop-blur-3xl whitespace-nowrap">
-                {text}
-            </div>
-        </span>
-    </div>
+  <div class="flex items-center">
+    <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
+      <span
+        class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#A7F3D0_0%,#10B981_50%,#A7F3D0_100%)]"
+      ></span>
+
+      <div
+        class="inline-flex items-center justify-center w-full px-3 py-1 text-sm rounded-full cursor-pointer backdrop-blur-3xl whitespace-nowrap bg-emerald-50/90 text-emerald-800"
+      >
+        {text}
+      </div>
+    </span>
+  </div>
 </a>
 
 <!-- 
