@@ -3,22 +3,13 @@
 export interface Props {
   href: string
   text?: string
-  target?: string
-  rel?: string
 }
 
-const {
-  href,
-  text = "Disponible para trabajar",
-  target = "_blank",
-  rel = "noopener"
-} = Astro.props
+const { href, text = "Available for Work!" } = Astro.props
 ---
 
 <a
   href={href}
-  target={target}
-  rel={rel}
   class="flex items-center transition md:justify-center md:hover:scale-105"
 >
   <div class="flex items-center">
@@ -30,7 +21,9 @@ const {
       <div
         class="inline-flex items-center justify-center w-full px-3 py-1 text-sm rounded-full cursor-pointer backdrop-blur-3xl whitespace-nowrap bg-emerald-50/90 text-emerald-800"
       >
-        {text}
+        <span class="text-base font-medium">
+          {text}
+        </span>
       </div>
     </span>
   </div>
