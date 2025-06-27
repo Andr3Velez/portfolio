@@ -1,11 +1,9 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro"
-
 import posTickImg from "../assets/posttick.png"
-
 import SaasIcon from "../icons/SaasIcon.astro"
 
-const projectDesciption = `All of the pages and components are first designed in Figma and we
+const projectDescription = `All of the pages and components are first designed in Figma and we
 keep a parity between the two versions even as we update the project.`
 ---
 
@@ -16,15 +14,14 @@ keep a parity between the two versions even as we update the project.`
     <div class="w-auto h-8">
       <SaasIcon />
     </div>
-
-    <h2 class="text-2xl font-semibold">Projects</h2>
+    <h2 class="text-2xl font-semibold" data-translate="projects">Projects</h2>
   </article>
 
   <article class="max-w-xl h-auto flex flex-col items-center">
     <ProjectCard
       projectImg={posTickImg.src}
       projectTitle="Post Tick"
-      projectDesc={projectDesciption}
+      projectDesc={projectDescription}
     />
   </article>
 </section>

@@ -1,8 +1,10 @@
 ---
 import ButtonAva from "./ButtonAva.astro"
 import perfilImg from "../assets/perfil.png"
-
 import LinkedInIcon from "../icons/LinkedInIcon.astro"
+
+const openTag = "&lt;/&gt;"
+const closeTag = "&lt;/&gt;"
 ---
 
 <section class="w-full h-full grid place-content-center py-16 sm:py-4">
@@ -18,50 +20,66 @@ import LinkedInIcon from "../icons/LinkedInIcon.astro"
     </div>
     <ButtonAva href="https://linkedin.com/in/tuusuario" />
   </article>
+
   <article
     class="max-w-xl h-auto flex flex-col justify-start items-center gap-4 mt-4"
   >
     <div class="w-full">
-      <h1 class="inline text-4xl font-bold text-left">Hey!, I'm André</h1>
+      <h1 class="inline text-4xl font-bold text-left" data-translate="greeting">
+        Hey!, I'm André
+      </h1>
     </div>
+
     <p class="text-xl font-semibold leading-9">
-      I'm a junior Front-End developer with Expertise in<span
+      <span data-translate="heroDescription"
+        >I'm a junior Front-End developer with Expertise in</span
+      >
+      <span
         class="bg-gray-700/80 text-blue-300 px-3 py-1 rounded-lg font-semibold mx-1 border border-gray-600/50 shadow-sm hover:bg-gray-600/80 transition-all duration-200"
         >HTML</span
-      >, <span
+      >,
+      <span
         class="bg-gray-700/80 text-blue-300 px-3 py-1 rounded-lg font-semibold mx-1 border border-gray-600/50 shadow-sm hover:bg-gray-600/80 transition-all duration-200"
         >CSS</span
-      >, <span
+      >,
+      <span
         class="bg-gray-700/80 text-blue-300 px-3 py-1 rounded-lg font-semibold mx-1 border border-gray-600/50 shadow-sm hover:bg-gray-600/80 transition-all duration-200"
         >JavaScript</span
-      >, <span
+      >,
+      <span
         class="bg-gray-700/80 text-blue-300 px-3 py-1 rounded-lg font-semibold mx-1 border border-gray-600/50 shadow-sm hover:bg-gray-600/80 transition-all duration-200"
         >React</span
-      >, <span
+      >,
+      <span
         class="bg-gray-700/80 text-blue-300 px-3 py-1 rounded-lg font-semibold mx-1 border border-gray-600/50 shadow-sm hover:bg-gray-600/80 transition-all duration-200"
         >Tailwind</span
-      >, <span
+      >,
+      <span
         class="bg-gray-700/80 text-blue-300 px-3 py-1 rounded-lg font-semibold mx-1 border border-gray-600/50 shadow-sm hover:bg-gray-600/80 transition-all duration-200"
         >Git</span
-      >, <span
+      >,
+      <span
         class="bg-gray-700/80 text-blue-300 px-3 py-1 rounded-lg font-semibold mx-1 border border-gray-600/50 shadow-sm hover:bg-gray-600/80 transition-all duration-200"
         >Basic TypeScript</span
-      >,<span
+      >,
+      <span
         class="bg-gray-700/80 text-blue-300 px-3 py-1 rounded-lg font-semibold mx-1 border border-gray-600/50 shadow-sm hover:bg-gray-600/80 transition-all duration-200"
+        >Firebase Services</span
       >
-        Firebase Services
-      </span>and I'm currently learning some Back-end skills such as: Node,
-      Express, PostgreSQL, MongoDB.
+      <span data-translate="backendSkills"
+        >and I'm currently learning some Back-end skills such as: Node, Express,
+        PostgreSQL, MongoDB.</span
+      >
     </p>
   </article>
+
   <article class="max-w-xl h-auto mt-8">
     <a
-      href="https://www.linkedin.com/in/andr%C3%A9-v%C3%A9lez-8401a5237/"
+      href="https://www.linkedin.com/in/andré-vélez-8401a5237/"
       target="_blank"
       class="w-30 flex justify-around p-2 border rounded-2xl hover:scale-115 transition-transform duration-300 ease-in-out shadow-2xl hover:bg-[#0077B5] hover:text-white hover:border-0"
     >
-      <LinkedInIcon />
-      <span class="font-semibold">LinkedIn</span></a
-    >
+      <span class="font-semibold">LinkedIn</span>
+    </a>
   </article>
 </section>

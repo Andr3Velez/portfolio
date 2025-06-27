@@ -18,36 +18,50 @@ const { projectImg, projectTitle, projectDesc } = Astro.props
       >
         <img
           src={projectImg}
-          alt="pos-screenshot"
+          alt="project-screenshot"
           class="w-full h-full object-cover"
         />
       </div>
       <div class="w-full flex flex-col justify-around pl-6 pr-28">
-        <h3 class="text-xl font-bold text-left block">{projectTitle}</h3>
+        <h3
+          class="text-xl font-bold text-left block"
+          data-translate="postTickTitle"
+        >
+          Post Tick
+        </h3>
         <ul class="flex items-center justify-around gap-x-1">
-          <div title="Node.js"><NodeIcon title="Node.js" /></div>
-          <div title="Express.js"><ExpressIcon title="Express.js" /></div>
-          <div title="JavaScript"><JSIcon title="JavaScript" /></div>
-          <div title="Tailwind CSS"><TailwindIcon title="Tailwind CSS" /></div>
+          <div title="Express.js">
+            <ExpressIcon />
+          </div>
+          <div title="Tailwind CSS">
+            <TailwindIcon />
+          </div>
+          <div title="Node.js">
+            <NodeIcon />
+          </div>
+          <div title="JavaScript">
+            <JSIcon />
+          </div>
         </ul>
         <a
-          class="text-black flex p-3 border-2 border-black rounded-lg hover:bg-[#56a54a] hover:text-white hover:border-0"
+          class="text-black flex p-3 border-2 border-black rounded-lg hover:bg-[#56a54a] hover:text-white hover:border-white"
           href="#"
         >
-          <PlayIcon class="w-5 h-5 inline-block ml-1" /><span
-            class="flex-grow text-center font-semibold">Demo</span
+          <PlayIcon class="w-5 h-5 inline-block ml-1" />
+          <span
+            class="flex-grow text-center font-semibold"
+            data-translate="demo">Demo</span
           >
         </a>
       </div>
     </div>
-
-    <div class="w-full h-auto px-1 mt-2">
-      <p class="text-lg font-medium break-words">
-        I wanted to show my back-end skills as well with this <span
-          class="text-xl font-bold underline">Post Tick</span
-        > project. I'm using Socket.io for real-time communication. Which means that
-        you can multiple users can open the project and see the same data (Post Ticks)
-        in real-time.
+    <div class="w-full mt-4">
+      <p class="text-md" data-translate="postTickDescription">
+        I wanted to show my <span class="font-semibold">back-end skills</span> as
+        well with this Post Tick project. I'm using <span class="font-semibold"
+          >Socket.io</span
+        > for real-time communication. Which means that you can multiple users can
+        open the project and see the same data (Post Ticks) in real-time.
       </p>
     </div>
   </div>

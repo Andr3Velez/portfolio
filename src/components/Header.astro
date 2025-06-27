@@ -1,28 +1,88 @@
-<header class="max-w-xl h-11 mx-auto">
-  <nav class="w-full h-fulll">
+---
+// src/components/Header.astro
+import TranslateIcon from "../icons/TranslateIcon.astro"
+---
+
+<header class="max-w-xl h-11 mx-auto px-4 py-8">
+  <nav class="w-full h-full flex justify-between items-center">
     <ul
-      class="w-full flex justify-center gap-x-4 p-4 font-semibold text-base md:text-xl lg:text-2xl"
+      class="flex flex-grow justify-center gap-x-4 p-4 font-semibold text-base md:text-xl lg:text-2xl"
     >
       <li
         class="hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
       >
-        Products
+        <span data-translate="products" data-scroll="products-section"
+          >Products</span
+        >
       </li>
       <li
         class="hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
       >
-        Experience
+        <span data-translate="experience" data-scroll="experience-section"
+          >Experience</span
+        >
       </li>
       <li
         class="hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
       >
-        Contact
-      </li>
-      <li
-        class="hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
-      >
-        About Me
+        <span data-translate="aboutMe" data-scroll="about-section"
+          >About Me</span
+        >
       </li>
     </ul>
+
+    <button
+      id="language-toggle"
+      class="flex items-center gap-2 px-3 py-1 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
+      title="Change language / Cambiar idioma"
+    >
+      <TranslateIcon class="w-5 h-5" />
+      <span id="current-lang" class="text-sm font-medium">EN</span>
+    </button>
   </nav>
 </header>
+
+<script>
+  import { currentLanguage, toggleLanguage } from "../stores/language.js"
+  import { getTranslation } from "../utils/translations.js"
+
+  const button = document.getElementById("language-toggle")
+  const langSpan = document.getElementById("current-lang")
+
+  // Language toggle functionality
+  button?.addEventListener("click", () => {
+    toggleLanguage()
+    updateLanguage()
+  })
+
+  function updateLanguage() {
+    const lang = currentLanguage.get()
+    langSpan.textContent = lang.toUpperCase()
+
+    // Update all translatable elements
+    document.querySelectorAll("[data-translate]").forEach((element) => {
+      const key = element.getAttribute("data-translate")
+      element.textContent = getTranslation(key, lang)
+    })
+  }
+
+  // Listen to language changes
+  currentLanguage.listen(() => {
+    updateLanguage()
+  })
+
+  // Navigation scroll functionality
+  document.querySelectorAll("[data-scroll]").forEach((element) => {
+    element.addEventListener("click", () => {
+      const targetId = element.getAttribute("data-scroll")
+      const targetElement = document.getElementById(targetId)
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        })
+      }
+    })
+  })
+</script>

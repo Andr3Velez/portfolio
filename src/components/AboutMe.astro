@@ -2,21 +2,18 @@
 import PersonIcon from "../icons/PersonIcon.astro"
 ---
 
-<section class="w-full h-auto grid place-content-center px-16 mt-6">
+<section
+  id="about-section"
+  class="w-full h-auto grid place-content-center px-16 mt-6"
+>
   <article class="max-w-xl">
-    <div class="flex h-8 gap-x-4">
-      <PersonIcon />
-      <h4 class="text-2xl font-semibold">About me</h4>
+    <div class="flex items-center gap-2 mb-6">
+      <PersonIcon class="w-6 h-6" />
+      <h2 class="text-2xl font-semibold" data-translate="aboutMeTitle">
+        About me
+      </h2>
     </div>
-    <!-- <p class="mt-5">
-      Mi nombre es André Vélez, y empecé en el mundo de la programación porque
-      no sabía que quería estudiar. Empecé a trabajar como asesor bilingue
-      varios años, lo cual me permitió mejorar mi nivel de inglés. Actualmente
-      estoy estudiando y desarrollando proyectos para poder ser un full-stack
-      web developer, porque hay demasiadas tecnologías llamativas, como para
-      quedarme con una única cosa.
-    </p> -->
-    <p class="mt-5">
+    <p class="text-base leading-relaxed" data-translate="aboutMeDescription">
       My name is André Vélez, and I got into programming because I didn't know
       what I wanted to study. My first job was as a bilingual agent in a call
       center for a couple of years. Because of that experience I was able to
