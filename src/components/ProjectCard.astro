@@ -1,8 +1,9 @@
 ---
-import ReactIcon from "../icons/ReactIcon.astro"
+import ExpressIcon from "../icons/ExpressIcon.astro"
 import TailwindIcon from "../icons/TailwindIcon.astro"
-import FirebaseIcon from "../icons/FirebaseIcon.astro"
-import ViteIcon from "../icons/ViteIcon.astro"
+import NodeIcon from "../icons/NodeIcon.astro"
+import JSIcon from "../icons/JSIcon.astro"
+import PlayIcon from "../icons/PlayIcon.astro"
 
 const { projectImg, projectTitle, projectDesc } = Astro.props
 ---
@@ -10,22 +11,43 @@ const { projectImg, projectTitle, projectDesc } = Astro.props
 <article
   class="max-w-xl h-auto flex justify-start items-center gap-x-4 mt-6 sm:mt-4 md:mt-6"
 >
-  <div class="w-full h-auto flex">
-    <div
-      class="max-w-72 h-auto rounded-3xl border border-gray-500 p-1 overflow-hidden hover:scale-110 hover:cursor-pointer transition-transform duration-300 ease-in-out"
-    >
-      <img src={projectImg} alt="pos-screenshot" class="object-cover" />
-    </div>
-    <div class="w-full flex flex-col justify-around pl-4">
-      <h3 class="text-xl font-bold text-left block">{projectTitle}</h3>
-      <div class="flex gap-x-1">
-        <ReactIcon class="w-7 h-7" />
-        <TailwindIcon />
-        <FirebaseIcon />
-        <ViteIcon />
+  <div class="w-full h-auto flex flex-col">
+    <div class="w-full h-auto flex">
+      <div
+        class="min-w-72 h-48 rounded-3xl border border-gray-500 p-1 overflow-hidden hover:scale-110 hover:cursor-pointer transition-transform duration-300 ease-in-out"
+      >
+        <img
+          src={projectImg}
+          alt="pos-screenshot"
+          class="w-full h-full object-cover"
+        />
       </div>
-      <p class="text-md font-medium break-words">
-        {projectDesc}
+      <div class="w-full flex flex-col justify-around pl-6 pr-28">
+        <h3 class="text-xl font-bold text-left block">{projectTitle}</h3>
+        <ul class="flex items-center justify-around gap-x-1">
+          <div title="Node.js"><NodeIcon title="Node.js" /></div>
+          <div title="Express.js"><ExpressIcon title="Express.js" /></div>
+          <div title="JavaScript"><JSIcon title="JavaScript" /></div>
+          <div title="Tailwind CSS"><TailwindIcon title="Tailwind CSS" /></div>
+        </ul>
+        <a
+          class="text-black flex p-3 border-2 border-black rounded-lg hover:bg-[#56a54a] hover:text-white hover:border-0"
+          href="#"
+        >
+          <PlayIcon class="w-5 h-5 inline-block ml-1" /><span
+            class="flex-grow text-center font-semibold">Demo</span
+          >
+        </a>
+      </div>
+    </div>
+
+    <div class="w-full h-auto px-1 mt-2">
+      <p class="text-lg font-medium break-words">
+        I wanted to show my back-end skills as well with this <span
+          class="text-xl font-bold underline">Post Tick</span
+        > project. I'm using Socket.io for real-time communication. Which means that
+        you can multiple users can open the project and see the same data (Post Ticks)
+        in real-time.
       </p>
     </div>
   </div>
