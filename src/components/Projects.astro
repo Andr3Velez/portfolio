@@ -4,6 +4,19 @@ import posTickImg from "../assets/posttick.png"
 import posLanding from "../assets/landing.png"
 import SaasIcon from "../icons/SaasIcon.astro"
 
+const technologies1 = [
+  { name: "node", title: "Node.js" },
+  { name: "express", title: "Express.js" },
+  { name: "javascript", title: "JavaScript" },
+  { name: "tailwind", title: "Tailwind CSS" }
+]
+
+const technologies2 = [
+  { name: "astro", title: "Astro" },
+  { name: "tailwind", title: "Tailwind CSS" },
+  { name: "javascript", title: "JavaScript" }
+]
+
 const backDescription = `All of the pages and components are first designed in Figma and we
 keep a parity between the two versions even as we update the project.`
 
@@ -26,11 +39,13 @@ keep a parity between the two versions even as we update the project.`
       projectImg={posTickImg.src}
       projectTitle="Post Tick"
       projectDesc={backDescription}
+      technologies={technologies1}
     />
     <ProjectCard
       projectImg={posLanding.src}
       projectTitle="Landing Page del POS"
       projectDesc={landingDescription}
+      technologies={technologies2}
     />
   </article>
 </section>

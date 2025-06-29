@@ -33,7 +33,8 @@ export const translations = {
       "Using the API of ChatGPT, I created a chatbot that helped to centralize all the important processes of the company instead of having multiple PDFs, Excels, etc.",
     quantumTask2:
       "Creating a clock-in tool that allows workers to generate their timesheets.",
-    quantumTask3: "I don't know what to put here",
+    quantumTask3:
+      "Designing and crafting an Employees Portal to centralize all employee-related information and processes.",
     march2021: "March 2021",
     konectaJob: "RPA Developer in Konecta",
     tasks: "Tasks",
@@ -88,7 +89,8 @@ export const translations = {
       "Usando la API de ChatGPT, creé un chatbot que ayudó a centralizar todos los procesos importantes de la empresa en lugar de tener múltiples PDFs, Excels, etc.",
     quantumTask2:
       "Creando una herramienta de marcado de entrada que permite a los trabajadores generar sus hojas de tiempo.",
-    quantumTask3: "No sé qué poner aquí",
+    quantumTask3:
+      "Diseñar e implementar un Portal de Empleados para centralizar toda la información y procesos relacionados con los empleados.",
     march2021: "Marzo 2021",
     konectaJob: "Desarrollador RPA en Konecta",
     tasks: "Tareas",

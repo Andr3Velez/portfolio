@@ -1,4 +1,3 @@
-// src/stores/language.js
 import { atom } from "nanostores"
 
 export const currentLanguage = atom("en")

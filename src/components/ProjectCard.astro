@@ -1,11 +1,43 @@
 ---
+// ProjectCard.astro
 import ExpressIcon from "../icons/ExpressIcon.astro"
 import TailwindIcon from "../icons/TailwindIcon.astro"
 import NodeIcon from "../icons/NodeIcon.astro"
 import JSIcon from "../icons/JSIcon.astro"
-import PlayIcon from "../icons/PlayIcon.astro"
+import ReactIcon from "../icons/ReactIcon.astro"
+import ViteIcon from "../icons/ViteIcon.astro"
+import AstroIcon from "../icons/AstroIcon.astro"
 
-const { projectImg, projectTitle, projectDesc } = Astro.props
+// Definir tipos
+export interface Technology {
+  name: string
+  title: string
+}
+
+export interface Props {
+  projectImg: string
+  projectTitle: string
+  projectDesc: string
+  technologies?: Technology[]
+}
+
+const {
+  projectImg,
+  projectTitle,
+  projectDesc,
+  technologies = []
+}: Props = Astro.props
+
+// Map de iconos disponibles
+const iconMap: Record<string, any> = {
+  express: ExpressIcon,
+  tailwind: TailwindIcon,
+  node: NodeIcon,
+  javascript: JSIcon,
+  react: ReactIcon,
+  vite: ViteIcon,
+  astro: AstroIcon
+}
 ---
 
 <article
@@ -29,29 +61,26 @@ const { projectImg, projectTitle, projectDesc } = Astro.props
         >
           {projectTitle}
         </h3>
+
+        <!-- Iconos dinámicos -->
         <ul class="flex items-center justify-around gap-x-1">
-          <div title="Express.js">
-            <ExpressIcon />
-          </div>
-          <div title="Tailwind CSS">
-            <TailwindIcon />
-          </div>
-          <div title="Node.js">
-            <NodeIcon />
-          </div>
-          <div title="JavaScript">
-            <JSIcon />
-          </div>
+          {
+            technologies.map((tech: Technology) => {
+              const IconComponent = iconMap[tech.name]
+              return IconComponent ? (
+                <li title={tech.title}>
+                  <IconComponent />
+                </li>
+              ) : null
+            })
+          }
         </ul>
+
         <a
           class="text-black flex p-3 border-2 border-black rounded-lg hover:bg-[#56a54a] hover:text-white hover:border-white"
           href="#"
         >
-          <PlayIcon class="w-5 h-5 inline-block ml-1" />
-          <span
-            class="flex-grow text-center font-semibold"
-            data-translate="demo">Demo</span
-          >
+          <span class="flex-grow text-center font-semibold">Demo</span>
         </a>
       </div>
     </div>
@@ -60,8 +89,9 @@ const { projectImg, projectTitle, projectDesc } = Astro.props
         I wanted to show my <span class="font-semibold">back-end skills</span> as
         well with this Post Tick project. I'm using <span class="font-semibold"
           >Socket.io</span
-        > for real-time communication. Which means that you can multiple users can
-        open the project and see the same data (Post Ticks) in real-time.
+        >
+        for real-time communication. Which means that multiple users can open the
+        project and see the same data (Post Ticks) in real-time.
       </p>
     </div>
   </div>
