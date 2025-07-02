@@ -2,6 +2,9 @@
 import ButtonAva from "./ButtonAva.astro"
 import perfilImg from "../assets/perfil.png"
 import LinkedInIcon from "../icons/LinkedInIcon.astro"
+import ExternalLink from "../icons/ExternalLink.astro"
+
+import CV from "../assets/a-v-cv.pdf"
 
 const openTag = "&lt;/&gt;"
 const closeTag = "&lt;/&gt;"
@@ -73,7 +76,7 @@ const closeTag = "&lt;/&gt;"
     </p>
   </article>
 
-  <article class="max-w-xl h-auto mt-8">
+  <article class="max-w-xl h-auto mt-8 flex gap-x-7">
     <a
       href="https://www.linkedin.com/in/andré-vélez-8401a5237/"
       target="_blank"
@@ -81,6 +84,14 @@ const closeTag = "&lt;/&gt;"
     >
       <LinkedInIcon />
       <span class="font-semibold">LinkedIn</span>
+    </a>
+    <a
+      href={CV}
+      target="_blank"
+      class="w-30 flex justify-around p-2 border rounded-2xl hover:scale-115 transition-transform duration-300 ease-in-out shadow-2xl hover:bg-[#0077B5] hover:text-white hover:border-0"
+    >
+      <ExternalLink />
+      <span class="font-semibold text-center flex-grow">CV</span>
     </a>
   </article>
 </section>
