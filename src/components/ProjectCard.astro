@@ -1,5 +1,4 @@
 ---
-// ProjectCard.astro
 import ExpressIcon from "../icons/ExpressIcon.astro"
 import TailwindIcon from "../icons/TailwindIcon.astro"
 import NodeIcon from "../icons/NodeIcon.astro"
@@ -19,6 +18,7 @@ export interface Props {
   projectImg: string
   projectTitle: string
   projectDesc: string
+  projectUrl: string
   technologies?: Technology[]
 }
 
@@ -26,6 +26,7 @@ const {
   projectImg,
   projectTitle,
   projectDesc,
+  projectUrl,
   technologies = []
 }: Props = Astro.props
 
@@ -79,7 +80,8 @@ const iconMap: Record<string, any> = {
 
         <a
           class="text-black flex p-3 border-2 border-black rounded-lg hover:bg-[#56a54a] hover:text-white hover:border-white"
-          href="#"
+          target="_blank"
+          href={projectUrl}
         >
           <span class="flex-grow text-center font-semibold">Demo</span>
           <ExternalLink />
