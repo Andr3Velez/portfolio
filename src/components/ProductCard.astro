@@ -5,6 +5,8 @@ import FirebaseIcon from "../icons/FirebaseIcon.astro"
 import ViteIcon from "../icons/ViteIcon.astro"
 import PlayIcon from "../icons/PlayIcon.astro"
 
+import demoVideo from "/assets/videos/demo-pos.mp4"
+
 const { productImg, productTitle, productDesc } = Astro.props
 ---
 
@@ -59,7 +61,9 @@ const { productImg, productTitle, productDesc } = Astro.props
       <div class="w-full h-12 flex">
         <a
           class="w-60 flex p-3 border-2 text-black border-black rounded-lg hover:bg-[#e8af72] hover:text-white hover:border-0"
-          href="#"
+          href={demoVideo}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <PlayIcon class="w-5 h-5 inline-block ml-1" />
           <span
