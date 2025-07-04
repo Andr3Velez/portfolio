@@ -3,27 +3,27 @@
 import TranslateIcon from "../icons/TranslateIcon.astro"
 ---
 
-<header class="max-w-4xl h-11 mx-auto px-4 py-8">
-  <nav class="w-full h-full flex justify-between items-center">
+<header class="w-full h-16 grid place-content-center">
+  <nav class="min-w-xl h-full flex justify-between items-center">
     <ul
-      class="flex justify-center flex-grow gap-x-4 p-4 font-semibold text-base md:text-xl lg:text-2xl"
+      class="flex justify-start flex-grow gap-x-4 font-semibold text-base md:text-xl lg:text-2xl"
     >
       <li
-        class="hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
+        class="hover:underline hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
       >
         <span data-translate="products" data-scroll="products-section"
           >Products</span
         >
       </li>
       <li
-        class="hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
+        class="hover:underline hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
       >
         <span data-translate="experience" data-scroll="experience-section"
           >Experience</span
         >
       </li>
       <li
-        class="hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
+        class="hover:underline hover:cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
       >
         <span data-translate="aboutMe" data-scroll="about-section"
           >About Me</span
@@ -33,7 +33,7 @@ import TranslateIcon from "../icons/TranslateIcon.astro"
 
     <button
       id="language-toggle"
-      class="flex items-center gap-2 px-3 py-1 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
+      class="flex items-center gap-2 px-3 py-1 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors duration-200 hover:cursor-pointer"
       title="Change language / Cambiar idioma"
     >
       <TranslateIcon class="w-5 h-5" />

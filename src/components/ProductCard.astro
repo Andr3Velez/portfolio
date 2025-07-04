@@ -14,21 +14,18 @@ const { productImg, productTitle, productDesc } = Astro.props
 <article
   class="max-w-xl h-auto flex justify-start items-center gap-x-4 mt-6 sm:mt-4 md:mt-6"
 >
-  <div class="w-full h-auto flex flex-col">
-    <!-- Imagen arriba -->
-    <div class="w-full h-auto">
-      <div
-        class="w-full h-auto rounded-3xl border border-gray-500 p-1 overflow-hidden"
-      >
-        <img
-          src={productImg}
-          alt="pos-screenshot"
-          class="w-full h-auto object-cover"
-        />
-      </div>
+  <div
+    class="w-full h-auto flex flex-col gap-y-3 border border-gray-500 rounded-lg overflow-hidden"
+  >
+    <div class="w-full h-80 overflow-hidden">
+      <img
+        src={productImg}
+        alt="pos-screenshot"
+        class="w-full h-full object-cover"
+      />
     </div>
 
-    <div class="flex flex-col gap-y-3 w-full mt-4">
+    <div class="w-full flex flex-col gap-y-3 px-2">
       <div class="w-full h-auto flex justify-start items-center">
         <span
           class="text-xl font-bold pr-4 border-r-2 border-black"
@@ -36,7 +33,7 @@ const { productImg, productTitle, productDesc } = Astro.props
         >
           POS - Point of Sale
         </span>
-        <ul class="h-full flex items-center gap-x-1 ml-5">
+        <ul class="h-full flex items-center gap-x-3 ml-5">
           <div title="React">
             <ReactIcon />
           </div>
@@ -62,7 +59,7 @@ const { productImg, productTitle, productDesc } = Astro.props
         efficient, making it easy for you to manage your business operations.
       </p>
 
-      <div class="w-full h-12 flex">
+      <div class="w-full h-12 flex mb-4">
         <a
           class="w-60 flex p-3 border-2 text-black border-black rounded-lg hover:bg-[#e8af72] hover:text-white hover:border-0"
           href={demoVideo}

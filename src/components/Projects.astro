@@ -1,6 +1,8 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro"
 import posTickImg from "../assets/posttick.png"
+import addedNote from "../assets/added-notes.png"
+import landv2 from "../assets/landv2.png"
 import posLanding from "../assets/landing.png"
 import SaasIcon from "../icons/SaasIcon.astro"
 
@@ -18,11 +20,9 @@ const technologies2 = [
   { name: "typescript", title: "TypeScript" }
 ]
 
-const backDescription = `All of the pages and components are first designed in Figma and we
-keep a parity between the two versions even as we update the project.`
+const backDescription = `I'm using Socket.io for real-time communication. Which means that multiple users can open the project and see the same data (Post Ticks) in real-time.`
 
-const landingDescription = `All of the pages and components are first designed in Figma and we
-keep a parity between the two versions even as we update the project.`
+const landingDescription = `I wanted to explore Astro because of the optimization it provides. I also used Tailwind CSS for styling and TypeScript for type safety.`
 ---
 
 <section class="w-full h-auto grid place-content-center py-16 sm:py-4">
@@ -37,15 +37,15 @@ keep a parity between the two versions even as we update the project.`
 
   <article class="max-w-xl h-auto flex flex-col items-center">
     <ProjectCard
-      projectImg={posTickImg.src}
+      projectImg={addedNote.src}
       projectTitle="Post Tick"
       projectDesc={backDescription}
       technologies={technologies1}
       projectUrl="https://project-back-end-ahwi.onrender.com/"
     />
     <ProjectCard
-      projectImg={posLanding.src}
-      projectTitle="Landing Page del POS"
+      projectImg={landv2.src}
+      projectTitle="Landing P"
       projectDesc={landingDescription}
       technologies={technologies2}
       projectUrl="https://pos-landing-astro.netlify.app/"

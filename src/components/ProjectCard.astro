@@ -9,12 +9,10 @@ import ViteIcon from "../icons/ViteIcon.astro"
 import AstroIcon from "../icons/AstroIcon.astro"
 import ExternalLink from "../icons/ExternalLink.astro"
 
-// Definir tipos
 export interface Technology {
   name: string
   title: string
 }
-
 export interface Props {
   projectImg: string
   projectTitle: string
@@ -31,7 +29,6 @@ const {
   technologies = []
 }: Props = Astro.props
 
-// Map de iconos disponibles
 const iconMap: Record<string, any> = {
   express: ExpressIcon,
   tailwind: TailwindIcon,
@@ -47,7 +44,58 @@ const iconMap: Record<string, any> = {
 <article
   class="max-w-xl h-auto flex justify-start items-center gap-x-4 mt-6 sm:mt-4 md:mt-6"
 >
-  <div class="w-full h-auto flex flex-col">
+  <div class="w-full h-72 flex border border-gray-400 rounded-lg">
+    <div class="min-w-64 h-auto flex rounded-lg overflow-hidden">
+      <img
+        src={projectImg}
+        alt="project-screenshot"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div class="w-full flex flex-col px-2 mt-4">
+      <div class="w-full flex flex-col justify-around items-start gap-y-6">
+        <div class="flex justify-center">
+          <h3
+            class="text-2xl font-bold text-left border-r-2 border-black px-3"
+            data-translate="postTickTitle"
+          >
+            {projectTitle}
+          </h3>
+
+          <ul class="flex items-center justify-around px-3 gap-x-2">
+            {
+              technologies.map((tech: Technology) => {
+                const IconComponent = iconMap[tech.name]
+                return IconComponent ? (
+                  <li title={tech.title}>
+                    <IconComponent />
+                  </li>
+                ) : null
+              })
+            }
+          </ul>
+        </div>
+
+        <p class="text-md px-4" data-translate="postTickDescription">
+          {projectDesc}
+        </p>
+
+        <div class="w-full px-4">
+          <a
+            class="text-black flex p-3 border-2 border-black rounded-lg hover:bg-[#56a54a] hover:text-white hover:border-white"
+            target="_blank"
+            href={projectUrl}
+          >
+            <span class="flex-grow text-center font-semibold">Demo</span>
+            <ExternalLink />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="w-full h-auto flex flex-col">
     <div class="w-full h-auto flex">
       <div
         class="min-w-72 h-48 rounded-3xl border border-gray-500 p-1 overflow-hidden hover:scale-110 hover:cursor-pointer transition-transform duration-300 ease-in-out"
@@ -66,7 +114,6 @@ const iconMap: Record<string, any> = {
           {projectTitle}
         </h3>
 
-        <!-- Iconos dinámicos -->
         <ul class="flex items-center justify-around gap-x-1">
           {
             technologies.map((tech: Technology) => {
@@ -100,5 +147,5 @@ const iconMap: Record<string, any> = {
         project and see the same data (Post Ticks) in real-time.
       </p>
     </div>
-  </div>
+  </div> -->
 </article>
